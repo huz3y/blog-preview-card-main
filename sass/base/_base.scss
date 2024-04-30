@@ -13,4 +13,8 @@ html {
 body {
   box-sizing: border-box;
   background-color: var(--color-primary);
+  display: flex;
+  padding: 21.85rem 0rem 21.95rem 0rem;
+  justify-content: center;
+  align-items: center;
 }
