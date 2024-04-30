@@ -1,0 +1,231 @@
+/*  
+    0   - 350px:    small-phone
+    350 - 600px:    phone
+    600 - 900px:    Tablet(portrait)
+    900 - 1200px:   Tablet(landscape)
+    (1200 to 1800px is where our normal styles apply)
+    1800px +:       Big Desktop
+
+    $breakpoint argument choices:
+    -small-phone
+    -phone
+    -tab-port
+    -tab-land
+    -big-desktop
+*/
+:root {
+  --color-primary: hsl(47, 88%, 63%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-grey: hsl(0, 0%, 50%);
+  --color-black: hsl(0, 0%, 7%);
+  --font-primary: "Figtree", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+@media only screen and (min-width: 112.5em) {
+  html {
+    font-size: 81.25%;
+  }
+}
+@media only screen and (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  html {
+    font-size: 50%;
+  }
+}
+@media only screen and (max-width: 21.875em) {
+  html {
+    font-size: 43.75%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  background-color: var(--color-primary);
+  display: flex;
+  padding: 21.85rem 0rem 21.95rem 0rem;
+  justify-content: center;
+  align-items: center;
+}
+@media only screen and (max-width: 37.5em) {
+  body {
+    padding: 19.375rem 3rem 19.5rem 3rem;
+  }
+}
+
+body {
+  color: var(--color-black);
+  font-family: var(--font-primary);
+  font-weight: 500;
+  line-height: 2.4;
+}
+
+.heading-primary {
+  align-self: stretch;
+  color: var(--color-black);
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 3.6rem;
+  transition: color 0.2s;
+}
+@media only screen and (max-width: 37.5em) {
+  .heading-primary {
+    font-size: 2.5rem;
+    line-height: 3.75rem;
+  }
+}
+
+.paragraph {
+  color: var(--color-grey);
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 2.4rem;
+}
+@media only screen and (max-width: 37.5em) {
+  .paragraph {
+    font-size: 1.75rem;
+    line-height: 2.635rem;
+  }
+}
+
+.card {
+  display: flex;
+  width: 38.4rem;
+  padding: 2.4rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2.4rem;
+  flex-shrink: 0;
+  border-radius: 2rem;
+  border: 1px solid var(--color-black);
+  background-color: var(--color-white);
+  box-shadow: 8px 8px 0px 0px #000;
+  backface-visibility: hidden;
+  transition: all 0.2s;
+}
+@media only screen and (max-width: 37.5em) {
+  .card {
+    border-radius: 2.5rem;
+    gap: 3rem;
+    padding: 3rem;
+    width: 40.875rem;
+  }
+}
+.card:hover, .card:active {
+  box-shadow: 16px 16px 0px 0px #000;
+  cursor: pointer;
+}
+.card:hover .heading-primary, .card:active .heading-primary {
+  color: var(--color-primary);
+}
+.card__image {
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  border-radius: 1rem;
+  background: var(--color-primary);
+}
+@media only screen and (max-width: 37.5em) {
+  .card__image {
+    border-radius: 1.25rem;
+  }
+}
+.card__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.2rem;
+  align-self: stretch;
+}
+@media only screen and (max-width: 37.5em) {
+  .card__content {
+    gap: 1.5rem;
+  }
+}
+.card__category {
+  display: flex;
+  padding: 0.4rem 1.2rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  border-radius: 0.4rem;
+  background-color: var(--color-primary);
+  color: var(--color-black);
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 2.1rem;
+}
+@media only screen and (max-width: 37.5em) {
+  .card__category {
+    padding: 0.5rem 1.5rem;
+    gap: 1rem;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+  }
+}
+.card__date {
+  color: var(--color-black);
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 2.1rem;
+}
+@media only screen and (max-width: 37.5em) {
+  .card__date {
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+  }
+}
+.card__author {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+@media only screen and (max-width: 37.5em) {
+  .card__author {
+    gap: 1.5rem;
+  }
+}
+.card__author-pic {
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 3.2rem;
+}
+@media only screen and (max-width: 37.5em) {
+  .card__author-pic {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+.card__author-name {
+  color: var(--Black, #111);
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 2.1rem;
+}
+@media only screen and (max-width: 37.5em) {
+  .card__author-name {
+    font-size: 1.75rem;
+    line-height: 2.625rem;
+  }
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3Nhc3MvYWJzdHJhY3RzL19taXhpbnMuc2NzcyIsIi4uL3Nhc3MvYWJzdHJhY3RzL192YXJpYWJsZXMuc2NzcyIsInN0eWxlLmNvbXAuY3NzIiwiLi4vc2Fzcy9iYXNlL19iYXNlLnNjc3MiLCIuLi9zYXNzL2Jhc2UvX3R5cG9ncmFwaHkuc2NzcyIsIi4uL3Nhc3MvbGF5b3V0L19jYXJkLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ0E7Ozs7Ozs7Ozs7Ozs7O0NBQUE7QUNEQTtFQUVFLGtDQUFBO0VBQ0EsK0JBQUE7RUFDQSw2QkFBQTtFQUNBLDZCQUFBO0VBR0EscUNBQUE7QUNhRjs7QUNyQkE7OztFQUdFLFNBQUE7RUFDQSxVQUFBO0VBQ0EsbUJBQUE7QUR3QkY7O0FDckJBO0VBQ0UsZ0JBQUE7QUR3QkY7QUZkSTtFR1hKO0lBSUksaUJBQUE7RUR5QkY7QUFDRjtBRmJJO0VHakJKO0lBUUksaUJBQUE7RUQwQkY7QUFDRjtBRlpJO0VHdkJKO0lBWUksY0FBQTtFRDJCRjtBQUNGO0FGTEk7RUduQ0o7SUFnQkksaUJBQUE7RUQ0QkY7QUFDRjs7QUN6QkE7RUFDRSxzQkFBQTtFQUNBLHNDQUFBO0VBQ0EsYUFBQTtFQUNBLG9DQUFBO0VBQ0EsdUJBQUE7RUFDQSxtQkFBQTtBRDRCRjtBRnpCSTtFR1RKO0lBU0ksb0NBQUE7RUQ2QkY7QUFDRjs7QUVuRUE7RUFDRSx5QkFBQTtFQUNBLGdDQUFBO0VBQ0EsZ0JBQUE7RUFDQSxnQkFBQTtBRnNFRjs7QUVuRUE7RUFDRSxtQkFBQTtFQUNBLHlCQUFBO0VBQ0EsaUJBQUE7RUFDQSxrQkFBQTtFQUNBLGdCQUFBO0VBQ0EsbUJBQUE7RUFDQSxzQkFBQTtBRnNFRjtBRi9DSTtFSTlCSjtJQVVJLGlCQUFBO0lBQ0Esb0JBQUE7RUZ1RUY7QUFDRjs7QUVwRUE7RUFDRSx3QkFBQTtFQUNBLGlCQUFBO0VBQ0Esa0JBQUE7RUFDQSxnQkFBQTtFQUNBLG1CQUFBO0FGdUVGO0FGN0RJO0VJZko7SUFRSSxrQkFBQTtJQUNBLHFCQUFBO0VGd0VGO0FBQ0Y7O0FHeEdBO0VBQ0UsYUFBQTtFQUNBLGNBQUE7RUFDQSxlQUFBO0VBQ0Esc0JBQUE7RUFDQSx1QkFBQTtFQUNBLFdBQUE7RUFDQSxjQUFBO0VBQ0EsbUJBQUE7RUFDQSxvQ0FBQTtFQUNBLG9DQUFBO0VBQ0EsZ0NBQUE7RUFDQSwyQkFBQTtFQUNBLG9CQUFBO0FIMkdGO0FGbkZJO0VLckNKO0lBZ0JJLHFCQUFBO0lBQ0EsU0FBQTtJQUNBLGFBQUE7SUFDQSxnQkFBQTtFSDRHRjtBQUNGO0FHMUdFO0VBRUUsa0NBQUE7RUFDQSxlQUFBO0FIMkdKO0FHeEdFO0VBRUUsMkJBQUE7QUh5R0o7QUd0R0U7RUFDRSxhQUFBO0VBQ0EsbUJBQUE7RUFDQSxtQkFBQTtFQUNBLG1CQUFBO0VBQ0EsZ0NBQUE7QUh3R0o7QUZ6R0k7RUtKRjtJQVFJLHNCQUFBO0VIeUdKO0FBQ0Y7QUd0R0U7RUFDRSxhQUFBO0VBQ0Esc0JBQUE7RUFDQSx1QkFBQTtFQUNBLFdBQUE7RUFDQSxtQkFBQTtBSHdHSjtBRnJISTtFS1FGO0lBUUksV0FBQTtFSHlHSjtBQUNGO0FHdEdFO0VBQ0UsYUFBQTtFQUNBLHNCQUFBO0VBQ0EsdUJBQUE7RUFDQSxtQkFBQTtFQUNBLFdBQUE7RUFDQSxxQkFBQTtFQUNBLHNDQUFBO0VBQ0EseUJBQUE7RUFDQSxpQkFBQTtFQUNBLGtCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxtQkFBQTtBSHdHSjtBRnhJSTtFS29CRjtJQWVJLHNCQUFBO0lBQ0EsU0FBQTtJQUNBLHFCQUFBO0lBQ0EsaUJBQUE7SUFDQSxvQkFBQTtFSHlHSjtBQUNGO0FHdEdFO0VBQ0UseUJBQUE7RUFDQSxpQkFBQTtFQUNBLGdCQUFBO0VBQ0EsbUJBQUE7QUh3R0o7QUZ2Skk7RUsyQ0Y7SUFPSSxpQkFBQTtJQUNBLG9CQUFBO0VIeUdKO0FBQ0Y7QUd0R0U7RUFDRSxhQUFBO0VBQ0EsbUJBQUE7RUFDQSxXQUFBO0FId0dKO0FGbEtJO0VLdURGO0lBTUksV0FBQTtFSHlHSjtBQUNGO0FHdEdFO0VBQ0UsYUFBQTtFQUNBLGNBQUE7RUFDQSxxQkFBQTtBSHdHSjtBRjVLSTtFS2lFRjtJQU1JLFdBQUE7SUFDQSxZQUFBO0VIeUdKO0FBQ0Y7QUd0R0U7RUFDRSx5QkFBQTtFQUNBLGlCQUFBO0VBQ0Esa0JBQUE7RUFDQSxnQkFBQTtFQUNBLG1CQUFBO0FId0dKO0FGekxJO0VLNEVGO0lBUUksa0JBQUE7SUFDQSxxQkFBQTtFSHlHSjtBQUNGIiwiZmlsZSI6InN5bGUucHJlZml4LmNzcyJ9 */
