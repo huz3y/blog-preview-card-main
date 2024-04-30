@@ -13,6 +13,13 @@
   backface-visibility: hidden;
   transition: all 0.2s;
 
+  @include respond(phone) {
+    border-radius: 2.5rem;
+    gap: 3rem;
+    padding: 3rem;
+    width: 40.875rem;
+  }
+
   &:hover,
   &:active {
     box-shadow: 16px 16px 0px 0px #000;
@@ -30,6 +37,10 @@
     align-self: stretch;
     border-radius: 1rem;
     background: var(--color-primary);
+
+    @include respond(phone) {
+      border-radius: 1.25rem;
+    }
   }
 
   &__content {
@@ -38,6 +49,10 @@
     align-items: flex-start;
     gap: 1.2rem;
     align-self: stretch;
+
+    @include respond(phone) {
+      gap: 1.5rem;
+    }
   }
 
   &__category {
@@ -53,6 +68,14 @@
     font-style: normal;
     font-weight: 800;
     line-height: 2.1rem;
+
+    @include respond(phone) {
+      padding: 0.5rem 1.5rem;
+      gap: 1rem;
+      border-radius: 0.5rem;
+      font-size: 1.5rem;
+      line-height: 2.25rem;
+    }
   }
 
   &__date {
@@ -60,18 +83,32 @@
     font-size: 1.4rem;
     font-weight: 500;
     line-height: 2.1rem;
+
+    @include respond(phone) {
+      font-size: 1.5rem;
+      line-height: 2.25rem;
+    }
   }
 
   &__author {
     display: flex;
     align-items: center;
     gap: 1.2rem;
+
+    @include respond(phone) {
+      gap: 1.5rem;
+    }
   }
 
   &__author-pic {
     width: 3.2rem;
     height: 3.2rem;
     border-radius: 3.2rem;
+
+    @include respond(phone) {
+      width: 4rem;
+      height: 4rem;
+    }
   }
 
   &__author-name {
@@ -80,5 +117,10 @@
     font-style: normal;
     font-weight: 800;
     line-height: 2.1rem;
+
+    @include respond(phone) {
+      font-size: 1.75rem;
+      line-height: 2.625rem;
+    }
   }
 }

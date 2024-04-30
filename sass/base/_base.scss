@@ -8,6 +8,22 @@
 
 html {
   font-size: 62.5%; //1rem = 10px
+
+  @include respond(big-desktop) {
+    font-size: 81.25%; //1rem = 13px
+  }
+
+  @include respond(tab-land) {
+    font-size: 56.25%; //1rem = 9px
+  }
+
+  @include respond(tab-port) {
+    font-size: 50%; //1rem = 8px
+  }
+
+  @include respond(small-phone) {
+    font-size: 43.75%; //1rem = 7px
+  }
 }
 
 body {
@@ -17,4 +33,8 @@ body {
   padding: 21.85rem 0rem 21.95rem 0rem;
   justify-content: center;
   align-items: center;
+
+  @include respond(phone) {
+    padding: 19.375rem 3rem 19.5rem 3rem;
+  }
 }
