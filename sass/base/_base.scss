@@ -30,11 +30,7 @@ body {
   box-sizing: border-box;
   background-color: var(--color-primary);
   display: flex;
-  padding: 21.85rem 0rem 21.95rem 0rem;
   justify-content: center;
   align-items: center;
-
-  @include respond(phone) {
-    padding: 19.375rem 3rem 19.5rem 3rem;
-  }
+  min-height: 100vh;
 }
